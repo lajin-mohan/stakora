@@ -121,6 +121,8 @@
   padding: 0;
 }
 
+[hidden] { display: none !important; }
+
 html {
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
@@ -1087,6 +1089,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 .btn-loading[aria-busy="true"] { display: inline; }
 
 /* Success / error feedback */
+.form-feedback[hidden] { display: none; }
 .form-feedback {
   display: flex;
   flex-direction: column;
