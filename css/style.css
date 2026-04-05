@@ -1088,6 +1088,18 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 .btn-loading { display: none; }
 .btn-loading[aria-busy="true"] { display: inline; }
 
+/* Field validation errors */
+.field-error {
+  font-size: var(--text-sm);
+  color: #b91c1c;
+  margin-top: 4px;
+  display: block;
+}
+.input-error {
+  border-color: #b91c1c !important;
+  box-shadow: 0 0 0 3px rgba(185,28,28,0.12) !important;
+}
+
 /* Success / error feedback */
 .form-feedback[hidden] { display: none; }
 .form-feedback {

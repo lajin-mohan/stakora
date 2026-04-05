@@ -105,9 +105,12 @@
   function openModal(trigger) {
     if (!modal) return;
     modalOpener = trigger || document.activeElement;
+    // Always reset to clean state when opening
+    if (contactForm)  { contactForm.hidden = false; contactForm.reset(); clearFieldErrors(); }
+    if (formSuccess)  formSuccess.setAttribute('hidden', '');
+    if (formError)    formError.setAttribute('hidden', '');
     modal.removeAttribute('hidden');
     document.body.style.overflow = 'hidden';
-    // Focus the close button
     requestAnimationFrame(() => {
       if (modalClose) modalClose.focus();
     });
@@ -158,23 +161,85 @@
   const formError    = document.getElementById('form-error');
   const formResetBtn = document.getElementById('form-reset-btn');
 
+  function setFieldError(inputEl, msg) {
+    clearFieldError(inputEl);
+    const err = document.createElement('span');
+    err.className = 'field-error';
+    err.setAttribute('role', 'alert');
+    err.textContent = msg;
+    inputEl.parentNode.appendChild(err);
+    inputEl.setAttribute('aria-invalid', 'true');
+    inputEl.classList.add('input-error');
+  }
+
+  function clearFieldError(inputEl) {
+    const existing = inputEl.parentNode.querySelector('.field-error');
+    if (existing) existing.remove();
+    inputEl.removeAttribute('aria-invalid');
+    inputEl.classList.remove('input-error');
+  }
+
+  function clearFieldErrors() {
+    if (!contactForm) return;
+    contactForm.querySelectorAll('.field-error').forEach(el => el.remove());
+    contactForm.querySelectorAll('[aria-invalid]').forEach(el => {
+      el.removeAttribute('aria-invalid');
+      el.classList.remove('input-error');
+    });
+  }
+
+  function validateForm() {
+    let valid = true;
+    const nameEl    = contactForm.querySelector('[name="name"]');
+    const emailEl   = contactForm.querySelector('[name="email"]');
+    const consentEl = contactForm.querySelector('[name="gdpr_consent"]');
+
+    clearFieldErrors();
+
+    if (!nameEl.value.trim()) {
+      setFieldError(nameEl, 'Please enter your full name.');
+      if (valid) nameEl.focus();
+      valid = false;
+    }
+
+    const emailVal = emailEl.value.trim();
+    if (!emailVal) {
+      setFieldError(emailEl, 'Please enter your email address.');
+      if (valid) emailEl.focus();
+      valid = false;
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+      setFieldError(emailEl, 'Please enter a valid email address.');
+      if (valid) emailEl.focus();
+      valid = false;
+    }
+
+    if (!consentEl.checked) {
+      setFieldError(consentEl, 'You must agree to proceed.');
+      if (valid) consentEl.focus();
+      valid = false;
+    }
+
+    return valid;
+  }
+
   if (contactForm) {
+    // Clear field error on input
+    contactForm.querySelectorAll('input, textarea, select').forEach(el => {
+      el.addEventListener('input', () => clearFieldError(el));
+      el.addEventListener('change', () => clearFieldError(el));
+    });
+
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
-      // GDPR consent guard
-      const consent = contactForm.querySelector('[name="gdpr_consent"]');
-      if (consent && !consent.checked) {
-        consent.focus();
-        return;
-      }
+      if (!validateForm()) return;
 
       // Loading state
       const btnText    = contactForm.querySelector('.btn-text');
       const btnLoading = contactForm.querySelector('.btn-loading');
       const submitBtn  = contactForm.querySelector('.form-submit');
-      if (btnText)    btnText.hidden    = true;
-      if (btnLoading) { btnLoading.hidden = false; btnLoading.setAttribute('aria-busy', 'true'); }
+      if (btnText)    btnText.setAttribute('hidden', '');
+      if (btnLoading) { btnLoading.removeAttribute('hidden'); }
       if (submitBtn)  submitBtn.disabled = true;
 
       try {
@@ -187,17 +252,16 @@
         const json = await res.json();
 
         if (res.ok && json.success) {
-          contactForm.hidden = true;
+          contactForm.setAttribute('hidden', '');
           if (formSuccess) { formSuccess.removeAttribute('hidden'); formSuccess.focus(); }
         } else {
           throw new Error(json.message || 'Submission failed');
         }
       } catch (_err) {
-        if (formError) { formError.removeAttribute('hidden'); formError.focus(); }
-        // Re-enable button so user can retry
-        if (btnText)    btnText.hidden    = false;
-        if (btnLoading) { btnLoading.hidden = true; btnLoading.removeAttribute('aria-busy'); }
+        if (btnText)    btnText.removeAttribute('hidden');
+        if (btnLoading) btnLoading.setAttribute('hidden', '');
         if (submitBtn)  submitBtn.disabled = false;
+        if (formError)  { formError.removeAttribute('hidden'); formError.focus(); }
       }
     });
   }
@@ -205,7 +269,11 @@
   // "Send another message" resets and shows the form again
   if (formResetBtn) {
     formResetBtn.addEventListener('click', () => {
-      if (contactForm) { contactForm.reset(); contactForm.hidden = false; }
+      if (contactForm) {
+        contactForm.reset();
+        clearFieldErrors();
+        contactForm.removeAttribute('hidden');
+      }
       if (formSuccess) formSuccess.setAttribute('hidden', '');
       if (formError)   formError.setAttribute('hidden', '');
     });
