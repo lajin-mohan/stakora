@@ -3,44 +3,32 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Stakora - ColdFusion Modernization Experts</title>
+		<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+		<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+		<title>Stakora | ColdFusion Modernization &amp; Legacy System Experts</title>
 		<meta
 			name="description"
-			content="Stakora helps teams modernize, secure, and scale legacy ColdFusion systems with a lean, high-impact engineering approach. Specialists in ColdFusion modernization, Lucee migration, and legacy system stabilization."
+			content="Stakora helps teams modernize, secure, and scale legacy ColdFusion systems — incrementally, safely, without costly rewrites. Specialists in ColdFusion modernization, Lucee migration, security hardening, and GDPR compliance."
 		/>
 		<meta
 			name="keywords"
-			content="ColdFusion modernization, legacy system stabilization, Lucee migration, ColdFusion security, GDPR compliance, backend extensions, PHP Go integration"
+			content="ColdFusion modernization, legacy system stabilization, Lucee migration, ColdFusion security hardening, GDPR compliance, Adobe ColdFusion to Lucee, ColdFusion consultant"
 		/>
 		<meta name="author" content="Stakora" />
 		<meta name="robots" content="index, follow" />
-		<meta
-			property="og:title"
-			content="Stakora - ColdFusion Modernization Experts"
-		/>
-		<meta
-			property="og:description"
-			content="Specialist engineering consulting for ColdFusion systems. Modernize, secure, and scale legacy applications incrementally."
-		/>
+		<meta property="og:title" content="Stakora | ColdFusion Modernization &amp; Legacy System Experts" />
+		<meta property="og:description" content="Specialist engineering consulting for ColdFusion systems. Modernize, secure, and scale legacy applications incrementally — without costly rewrites." />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://stakora.tech" />
-		<meta property="og:image" content="https://stakora.tech/images/logo.png" />
+		<meta property="og:image" content="https://stakora.tech/images/og-image.jpg" />
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta
-			name="twitter:title"
-			content="Stakora - ColdFusion Modernization Experts"
-		/>
-		<meta
-			name="twitter:description"
-			content="Specialist engineering consulting for ColdFusion systems. Modernize, secure, and scale legacy applications incrementally."
-		/>
+		<meta name="twitter:title" content="Stakora | ColdFusion Modernization &amp; Legacy System Experts" />
+		<meta name="twitter:description" content="Specialist engineering consulting for ColdFusion systems. Modernize, secure, and scale legacy applications incrementally." />
+		<meta name="twitter:image" content="https://stakora.tech/images/og-image.jpg" />
 		<link rel="canonical" href="https://stakora.tech" />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link
-			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
-			rel="stylesheet"
-		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png" />
+		<link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png" />
+		<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
 		<script defer src="https://unpkg.com/phosphor-icons"></script>
 		<link rel="stylesheet" href="css/style.css" />
 		<script src="js/script.js" defer></script>
@@ -63,8 +51,20 @@
 					<a href="#process" class="nav-link">How We Work</a>
 					<a href="#audience" class="nav-link">Who We Work With</a>
 					<a href="#footer" class="nav-link">Contact</a>
-					<a href="#" class="btn btn-primary">Request a Review</a>
+					<a href="#" class="btn btn-primary" data-modal="contact">Request a Review</a>
 				</div>
+				<button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+					<span></span>
+					<span></span>
+					<span></span>
+				</button>
+			</div>
+			<div class="nav-mobile" id="nav-mobile" hidden>
+				<a href="#services" class="nav-mobile-link">Services</a>
+				<a href="#process" class="nav-mobile-link">How We Work</a>
+				<a href="#audience" class="nav-mobile-link">Who We Work With</a>
+				<a href="#footer" class="nav-mobile-link">Contact</a>
+				<a href="#" class="btn btn-primary nav-mobile-cta" data-modal="contact">Request a Review</a>
 			</div>
 		</nav>
 
@@ -82,7 +82,7 @@
 							team. High-impact outcomes.
 						</p>
 						<div class="hero-ctas">
-							<a href="#" class="btn btn-primary"
+							<a href="#" class="btn btn-primary" data-modal="contact"
 								>Request a Free System Review</a
 							>
 							<a href="#process" class="btn btn-ghost">See how we work →</a>
@@ -112,32 +112,34 @@
 								tools. But over time, these systems accumulate technical debt
 								that makes every change feel risky:
 							</p>
-							<ul class="problem-bullets">
-								<li>
-									Security vulnerabilities build up as platforms age and patches
-									fall behind.
-								</li>
-								<li>
-									Maintenance becomes harder as institutional knowledge walks
-									out the door.
-								</li>
-								<li>
-									Performance degrades under modern traffic volumes the system
-									was never designed for.
-								</li>
-								<li>
-									Infrastructure and licensing costs keep rising without a
-									corresponding improvement.
-								</li>
-								<li>
-									Interfaces look and feel outdated, affecting user trust and
-									adoption.
-								</li>
-								<li>
-									Compliance requirements — GDPR, data handling, audit trails —
-									become harder to meet.
-								</li>
-							</ul>
+						</div>
+						<ul class="problem-bullets">
+							<li class="reveal" style="--i: 2">
+								Security vulnerabilities build up as platforms age and patches
+								fall behind.
+							</li>
+							<li class="reveal" style="--i: 3">
+								Maintenance becomes harder as institutional knowledge walks
+								out the door.
+							</li>
+							<li class="reveal" style="--i: 4">
+								Performance degrades under modern traffic volumes the system
+								was never designed for.
+							</li>
+							<li class="reveal" style="--i: 5">
+								Infrastructure and licensing costs keep rising without a
+								corresponding improvement.
+							</li>
+							<li class="reveal" style="--i: 6">
+								Interfaces look and feel outdated, affecting user trust and
+								adoption.
+							</li>
+							<li class="reveal" style="--i: 7">
+								Compliance requirements — GDPR, data handling, audit trails —
+								become harder to meet.
+							</li>
+						</ul>
+						<div class="reveal" style="--i: 8">
 							<p>
 								Stakora helps teams fix these problems incrementally and safely
 								— without touching what's working.
@@ -352,6 +354,13 @@
 								the architecture and strategy.
 							</p>
 						</div>
+						<div class="reveal" style="--i: 7">
+							<h3>Clear communication</h3>
+							<p>
+								You always know what's being changed, why, and what comes next.
+								No surprises, no black boxes.
+							</p>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -423,14 +432,11 @@
 							without a full rewrite.
 						</p>
 						<div class="hero-ctas">
-							<a href="#" class="btn btn-white"
+							<a href="https://cal.com/stakora" class="btn btn-white" target="_blank" rel="noopener noreferrer"
 								>Schedule a Free Discovery Call</a
 							>
-							<a
-								href="mailto:hello@stakora.tech"
-								style="color: white; text-decoration: underline"
+							<a href="mailto:hello@stakora.tech" class="cta-email-link"
 								>Or email us: hello@stakora.tech</a
-							>
 							>
 						</div>
 						<p class="cta-note">
@@ -446,8 +452,13 @@
 					<div class="footer-content">
 						<div>
 							<h3>STAKORA</h3>
-							<p>Critical systems. Precisely evolved.</p>
-							<p>hello@stakora.tech</p>
+							<p>Legacy code. Modern confidence.</p>
+							<p><a href="mailto:hello@stakora.tech">hello@stakora.tech</a></p>
+							<address>
+								Level 15, UB City, Concorde Towers,<br>
+								24 Vittal Mallya Road,<br>
+								Bangalore – 560001, India
+							</address>
 						</div>
 						<nav class="footer-nav">
 							<a href="#services" class="nav-link">Services</a>
@@ -457,7 +468,7 @@
 						</nav>
 					</div>
 					<div class="footer-legal">
-						© 2026 Stakora. All rights reserved. · Privacy Policy
+						© 2026 Stakora. All rights reserved. · <a href="privacy.html">Privacy Policy</a>
 					</div>
 				</div>
 			</footer>
@@ -466,27 +477,106 @@
 		<script type="application/ld+json">
 			{
 				"@context": "https://schema.org",
-				"@type": "Organization",
+				"@type": ["Organization", "ProfessionalService"],
 				"name": "Stakora",
 				"url": "https://stakora.tech",
 				"logo": "https://stakora.tech/images/logo.png",
 				"description": "Specialist engineering consulting firm for ColdFusion modernization, legacy system stabilization, and secure scaling.",
+				"areaServed": ["AE", "US", "EU"],
+				"knowsAbout": ["ColdFusion", "Lucee", "CFML", "Legacy System Modernization", "GDPR Compliance", "Linux Migration"],
 				"contactPoint": {
 					"@type": "ContactPoint",
 					"email": "hello@stakora.tech",
-					"contactType": "Customer Service"
+					"contactType": "sales",
+					"availableLanguage": "English"
 				},
-				"sameAs": ["https://stakora.tech"],
-				"serviceType": [
-					"ColdFusion Modernization",
-					"Legacy System Stabilization",
-					"Lucee Migration",
-					"Security Hardening",
-					"GDPR Compliance",
-					"Cost Optimization",
-					"Backend Extensions"
-				]
+				"hasOfferCatalog": {
+					"@type": "OfferCatalog",
+					"name": "ColdFusion Engineering Services",
+					"itemListElement": [
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "ColdFusion Modernization"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Legacy System Stabilization"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Lucee & Linux Migration"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Security Hardening"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "GDPR & Compliance Alignment"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Cost Optimization"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Performance & Scaling"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "New App Development (PHP/Go)"}},
+						{"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Legacy App Maintenance"}}
+					]
+				}
 			}
 		</script>
+		<!-- CONTACT MODAL -->
+		<div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+			<div class="modal-overlay"></div>
+			<div class="modal-box">
+				<button class="modal-close" aria-label="Close modal">&times;</button>
+				<div class="modal-header">
+					<span class="section-label">GET IN TOUCH</span>
+					<h3 id="modal-title">Request a Free System Review</h3>
+					<p>Tell us about your ColdFusion system and we'll be in touch within one business day.</p>
+				</div>
+				<form id="contact-form" novalidate>
+					<input type="hidden" name="access_key" value="1b246da5-e2e5-4b12-af64-205a2f07e841" />
+					<input type="hidden" name="subject" value="New enquiry — Stakora.tech" />
+					<input type="hidden" name="from_name" value="Stakora Website" />
+					<input type="hidden" name="redirect" value="false" />
+					<input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none" />
+
+					<div class="form-row">
+						<div class="form-group">
+							<label for="f-name">Full name <span class="required" aria-hidden="true">*</span></label>
+							<input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Jane Smith" />
+						</div>
+						<div class="form-group">
+							<label for="f-company">Company</label>
+							<input type="text" id="f-company" name="company" autocomplete="organization" placeholder="Acme Corp" />
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="f-email">Email address <span class="required" aria-hidden="true">*</span></label>
+						<input type="email" id="f-email" name="email" required autocomplete="email" placeholder="jane@company.com" />
+					</div>
+					<div class="form-group">
+						<label for="f-service">Service of interest</label>
+						<select id="f-service" name="service">
+							<option value="">Select a service…</option>
+							<option value="ColdFusion Modernization">ColdFusion Modernization</option>
+							<option value="Legacy System Stabilization">Legacy System Stabilization</option>
+							<option value="Lucee &amp; Linux Migration">Lucee &amp; Linux Migration</option>
+							<option value="Security Hardening">Security Hardening</option>
+							<option value="GDPR &amp; Compliance Alignment">GDPR &amp; Compliance Alignment</option>
+							<option value="Performance &amp; Scaling">Performance &amp; Scaling</option>
+							<option value="Cost Optimization">Cost Optimization</option>
+							<option value="New App Development (PHP/Go)">New App Development (PHP/Go)</option>
+							<option value="Legacy App Maintenance">Legacy App Maintenance</option>
+							<option value="Not sure yet">Not sure yet</option>
+						</select>
+					</div>
+					<div class="form-group">
+						<label for="f-message">Brief description of your system or challenge</label>
+						<textarea id="f-message" name="message" rows="4" placeholder="e.g. We're running Adobe ColdFusion 2018 on Windows Server, handling ~50k requests/day..."></textarea>
+					</div>
+					<div class="form-group form-consent">
+						<label class="checkbox-label">
+							<input type="checkbox" name="gdpr_consent" required />
+							<span>I agree to Stakora processing my data to respond to this enquiry. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+						</label>
+					</div>
+					<button type="submit" class="btn btn-primary form-submit">
+						<span class="btn-text">Send Message</span>
+						<span class="btn-loading" hidden aria-live="polite">Sending…</span>
+					</button>
+				</form>
+				<div id="form-success" class="form-feedback form-feedback--success" hidden role="alert">
+					<p>✓ Message received. We'll be in touch within one business day.</p>
+					<button class="btn btn-ghost" id="form-reset-btn">Send another message</button>
+				</div>
+				<div id="form-error" class="form-feedback form-feedback--error" hidden role="alert">
+					<p>Something went wrong — please try again or email us directly at <a href="mailto:hello@stakora.tech">hello@stakora.tech</a>.</p>
+				</div>
+			</div>
+		</div>
 	</body>
 </html>
