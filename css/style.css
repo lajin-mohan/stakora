@@ -74,11 +74,6 @@
    ============================================================ */
 @font-face {
   font-family: 'Inter';
-  src: url('../fonts/inter-300.woff2') format('woff2');
-  font-weight: 300; font-style: normal; font-display: swap;
-}
-@font-face {
-  font-family: 'Inter';
   src: url('../fonts/inter-400.woff2') format('woff2');
   font-weight: 400; font-style: normal; font-display: swap;
 }
@@ -1127,4 +1122,38 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
     max-height: 95vh;
     padding: var(--space-6);
   }
+}
+
+/* ============================================================
+   FAQ
+   ============================================================ */
+#faq { background: var(--color-surface); }
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-top: var(--space-12);
+}
+
+.faq-item {
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  border-left: 3px solid var(--color-orange);
+}
+
+.faq-item h3 {
+  font-size: var(--text-h4);
+  font-weight: 600;
+  color: var(--color-charcoal);
+  margin-bottom: var(--space-3);
+  letter-spacing: -0.01em;
+}
+
+.faq-item p { max-width: none; }
+
+@media (min-width: 768px) {
+  .faq-list { gap: var(--space-3); }
 }
