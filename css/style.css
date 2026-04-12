@@ -1125,7 +1125,7 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
 }
 
 /* ============================================================
-   FAQ
+   FAQ ACCORDION
    ============================================================ */
 #faq { background: var(--color-surface); }
 
@@ -1140,20 +1140,105 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
   background: var(--color-white);
   border: 1px solid var(--color-border);
   border-radius: var(--radius-lg);
-  padding: var(--space-8);
-  border-left: 3px solid var(--color-orange);
+  overflow: hidden;
+  border-left: 3px solid transparent;
+  transition:
+    border-color var(--dur-normal) var(--ease-out),
+    box-shadow var(--dur-normal) var(--ease-out);
 }
 
-.faq-item h3 {
-  font-size: var(--text-h4);
+.faq-item:hover,
+.faq-item.open {
+  border-left-color: var(--color-orange);
+  box-shadow: var(--shadow-card);
+}
+
+/* Question button */
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--space-6) var(--space-8);
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  gap: var(--space-6);
+  transition: background-color var(--dur-fast) var(--ease-out);
+}
+
+.faq-question:hover { background: var(--color-surface); }
+
+.faq-question span {
+  font-size: var(--text-body);
   font-weight: 600;
   color: var(--color-charcoal);
-  margin-bottom: var(--space-3);
-  letter-spacing: -0.01em;
+  line-height: 1.4;
+  flex: 1;
+  transition: color var(--dur-fast) var(--ease-out);
 }
 
-.faq-item p { max-width: none; }
+.faq-item.open .faq-question span { color: var(--color-orange); }
+
+.faq-icon {
+  color: var(--color-orange);
+  font-size: 20px;
+  flex-shrink: 0;
+  transition: transform var(--dur-normal) var(--ease-spring);
+}
+
+.faq-item.open .faq-icon { transform: rotate(180deg); }
+
+/* Answer — smooth height via grid trick */
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--dur-slow) var(--ease-out);
+}
+
+.faq-item.open .faq-answer { grid-template-rows: 1fr; }
+
+.faq-answer-inner {
+  overflow: hidden;
+}
+
+.faq-answer-inner p {
+  padding: 0 var(--space-8) var(--space-8);
+  max-width: none;
+  color: var(--color-body);
+  line-height: 1.7;
+  border-top: 1px solid var(--color-border);
+  padding-top: var(--space-4);
+  margin: 0 var(--space-8);
+  margin-bottom: var(--space-6);
+}
+
+/* Why section icons */
+.why-icon {
+  color: var(--color-orange);
+  font-size: 28px;
+  display: block;
+  margin-bottom: var(--space-4);
+  line-height: 1;
+}
+
+/* Problem bullet icons */
+.problem-bullets li i[class*="ph-"] {
+  color: var(--color-orange);
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* CTA email link icon alignment */
+.cta-email-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
 
 @media (min-width: 768px) {
   .faq-list { gap: var(--space-3); }
+  .faq-question span { font-size: var(--text-body-lg); }
 }

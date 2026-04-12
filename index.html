@@ -35,8 +35,8 @@
 		<link rel="preload" href="fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
 		<link rel="preconnect" href="https://unpkg.com" />
 		<script defer src="https://unpkg.com/phosphor-icons"></script>
-		<link rel="stylesheet" href="css/style.css?v=3" />
-		<script src="js/script.js?v=2" defer></script>
+		<link rel="stylesheet" href="css/style.css?v=4" />
+		<script src="js/script.js?v=3" defer></script>
 	</head>
 	<body>
 		<a href="#main" class="skip-link">Skip to content</a>
@@ -123,28 +123,28 @@
 						</div>
 						<ul class="problem-bullets">
 							<li class="reveal" style="--i: 2">
-								Security vulnerabilities build up as platforms age and patches
-								fall behind.
+								<i class="ph-bold ph-shield-warning" aria-hidden="true"></i>
+								<span>Security vulnerabilities build up as platforms age and patches fall behind.</span>
 							</li>
 							<li class="reveal" style="--i: 3">
-								Maintenance becomes harder as institutional knowledge walks
-								out the door.
+								<i class="ph-bold ph-clock" aria-hidden="true"></i>
+								<span>Maintenance becomes harder as institutional knowledge walks out the door.</span>
 							</li>
 							<li class="reveal" style="--i: 4">
-								Performance degrades under modern traffic volumes the system
-								was never designed for.
+								<i class="ph-bold ph-chart-line-down" aria-hidden="true"></i>
+								<span>Performance degrades under modern traffic volumes the system was never designed for.</span>
 							</li>
 							<li class="reveal" style="--i: 5">
-								Infrastructure and licensing costs keep rising without a
-								corresponding improvement.
+								<i class="ph-bold ph-currency-dollar" aria-hidden="true"></i>
+								<span>Infrastructure and licensing costs keep rising without a corresponding improvement.</span>
 							</li>
 							<li class="reveal" style="--i: 6">
-								Interfaces look and feel outdated, affecting user trust and
-								adoption.
+								<i class="ph-bold ph-layout" aria-hidden="true"></i>
+								<span>Interfaces look and feel outdated, affecting user trust and adoption.</span>
 							</li>
 							<li class="reveal" style="--i: 7">
-								Compliance requirements — GDPR, data handling, audit trails —
-								become harder to meet.
+								<i class="ph-bold ph-file-x" aria-hidden="true"></i>
+								<span>Compliance requirements — GDPR, data handling, audit trails — become harder to meet.</span>
 							</li>
 						</ul>
 						<div class="reveal" style="--i: 8">
@@ -321,6 +321,7 @@
 					</div>
 					<div class="why-grid">
 						<div class="reveal" style="--i: 1">
+							<i class="ph-bold ph-cpu why-icon" aria-hidden="true"></i>
 							<h3>Deep CF expertise</h3>
 							<p>
 								Practitioner-level knowledge of ColdFusion, CFML, and Lucee —
@@ -328,6 +329,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 2">
+							<i class="ph-bold ph-path why-icon" aria-hidden="true"></i>
 							<h3>Proven migration track record</h3>
 							<p>
 								Experience across ColdFusion-to-Lucee and Windows-to-Linux
@@ -335,6 +337,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 3">
+							<i class="ph-bold ph-shield-check why-icon" aria-hidden="true"></i>
 							<h3>Security-first approach</h3>
 							<p>
 								Compliance and security integrated from the start, not bolted on
@@ -342,6 +345,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 4">
+							<i class="ph-bold ph-git-branch why-icon" aria-hidden="true"></i>
 							<h3>Incremental by design</h3>
 							<p>
 								Production systems stay stable throughout every phase of every
@@ -349,6 +353,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 5">
+							<i class="ph-bold ph-target why-icon" aria-hidden="true"></i>
 							<h3>Outcome-based delivery</h3>
 							<p>
 								We are paid to solve problems, not to bill hours. Fixed scope.
@@ -356,6 +361,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 6">
+							<i class="ph-bold ph-handshake why-icon" aria-hidden="true"></i>
 							<h3>Direct access</h3>
 							<p>
 								Small, expert-led team. You work directly with the people doing
@@ -363,6 +369,7 @@
 							</p>
 						</div>
 						<div class="reveal" style="--i: 7">
+							<i class="ph-bold ph-chat-dots why-icon" aria-hidden="true"></i>
 							<h3>Clear communication</h3>
 							<p>
 								You always know what's being changed, why, and what comes next.
@@ -436,28 +443,70 @@
 					</div>
 					<div class="faq-list">
 						<div class="faq-item reveal" style="--i: 1">
-							<h3>Is ColdFusion still supported in 2026?</h3>
-							<p>Adobe ColdFusion 2023 is the current supported version, with mainstream support running through 2026. Lucee, the open-source CFML engine, is actively developed with no licensing costs. Many organisations continue to run ColdFusion systems reliably — the key is staying current with security patches and planning a migration path before support timelines become a risk.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>Is ColdFusion still supported in 2026?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>Adobe ColdFusion 2023 is the current supported version, with mainstream support running through 2026. Lucee, the open-source CFML engine, is actively developed with no licensing costs. Many organisations continue to run ColdFusion systems reliably — the key is staying current with security patches and planning a migration path before support timelines become a risk.</p>
+								</div>
+							</div>
 						</div>
 						<div class="faq-item reveal" style="--i: 2">
-							<h3>Can you modernize a ColdFusion system without downtime?</h3>
-							<p>Yes. Our entire approach is built around keeping production systems operational throughout every engagement. We work incrementally — identifying and resolving issues component by component — rather than making large-scale changes that require downtime. Each phase is agreed, scoped, and tested before deployment.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>Can you modernize a ColdFusion system without downtime?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>Yes. Our entire approach is built around keeping production systems operational throughout every engagement. We work incrementally — identifying and resolving issues component by component — rather than making large-scale changes that require downtime. Each phase is agreed, scoped, and tested before deployment.</p>
+								</div>
+							</div>
 						</div>
 						<div class="faq-item reveal" style="--i: 3">
-							<h3>What is the difference between Adobe ColdFusion and Lucee?</h3>
-							<p>Both run CFML (ColdFusion Markup Language) and are largely compatible, but Lucee is open-source, free to use, and actively community-maintained. Adobe ColdFusion carries significant per-server licensing costs. Migrating from Adobe ColdFusion to Lucee on Linux is one of our most common engagements — it dramatically reduces infrastructure spend while improving performance and long-term supportability.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>What is the difference between Adobe ColdFusion and Lucee?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>Both run CFML (ColdFusion Markup Language) and are largely compatible, but Lucee is open-source, free to use, and actively community-maintained. Adobe ColdFusion carries significant per-server licensing costs. Migrating from Adobe ColdFusion to Lucee on Linux is one of our most common engagements — it dramatically reduces infrastructure spend while improving performance and long-term supportability.</p>
+								</div>
+							</div>
 						</div>
 						<div class="faq-item reveal" style="--i: 4">
-							<h3>How long does a ColdFusion modernization project take?</h3>
-							<p>It depends on the complexity of your system. Our System Assessment — the first engagement — typically takes two to four weeks and delivers a prioritised roadmap with clear scope. Stabilization phases can begin immediately after. Full modernization is structured in agreed stages, giving you control over pace and budget at every step.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>How long does a ColdFusion modernization project take?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>It depends on the complexity of your system. Our System Assessment — the first engagement — typically takes two to four weeks and delivers a prioritised roadmap with clear scope. Stabilization phases can begin immediately after. Full modernization is structured in agreed stages, giving you control over pace and budget at every step.</p>
+								</div>
+							</div>
 						</div>
 						<div class="faq-item reveal" style="--i: 5">
-							<h3>Do you rewrite ColdFusion systems or migrate them incrementally?</h3>
-							<p>We do not do full rewrites. Rewriting a working ColdFusion system from scratch is expensive, high-risk, and frequently fails. We refactor and migrate incrementally — modernizing component by component while the rest of the system remains operational. You stay live throughout, your team stays in control, and you see measurable value at each stage.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>Do you rewrite ColdFusion systems or migrate them incrementally?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>We do not do full rewrites. Rewriting a working ColdFusion system from scratch is expensive, high-risk, and frequently fails. We refactor and migrate incrementally — modernizing component by component while the rest of the system remains operational. You stay live throughout, your team stays in control, and you see measurable value at each stage.</p>
+								</div>
+							</div>
 						</div>
 						<div class="faq-item reveal" style="--i: 6">
-							<h3>Where are your clients based?</h3>
-							<p>We work with teams across the United States, the United Kingdom, and Europe. Our engagements are remote-first and we support teams across time zones. We have direct experience with EU GDPR requirements, UK data protection standards, and US data handling requirements.</p>
+							<button class="faq-question" aria-expanded="false">
+								<span>Where are your clients based?</span>
+								<i class="ph-bold ph-caret-down faq-icon" aria-hidden="true"></i>
+							</button>
+							<div class="faq-answer">
+								<div class="faq-answer-inner">
+									<p>We work with teams across the United States, the United Kingdom, and Europe. Our engagements are remote-first and we support teams across time zones. We have direct experience with EU GDPR requirements, UK data protection standards, and US data handling requirements.</p>
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -475,12 +524,14 @@
 							without a full rewrite.
 						</p>
 						<div class="hero-ctas">
-							<a href="https://cal.com/stakora" class="btn btn-white" target="_blank" rel="noopener noreferrer"
-								>Schedule a Free Discovery Call</a
-							>
-							<a href="mailto:hello@stakora.tech" class="cta-email-link"
-								>Or email us: hello@stakora.tech</a
-							>
+							<a href="https://cal.com/stakora" class="btn btn-white" target="_blank" rel="noopener noreferrer">
+								<i class="ph-bold ph-calendar" aria-hidden="true"></i>
+								Schedule a Free Discovery Call
+							</a>
+							<a href="mailto:hello@stakora.tech" class="cta-email-link">
+								<i class="ph-bold ph-envelope" aria-hidden="true"></i>
+								Or email us: hello@stakora.tech
+							</a>
 						</div>
 						<p class="cta-note">
 							Fixed-scope engagements. No hourly billing. No scope creep. Clear
@@ -496,7 +547,7 @@
 						<div>
 							<h3>STAKORA</h3>
 							<p>Legacy code. Modern confidence.</p>
-							<p><a href="mailto:hello@stakora.tech">hello@stakora.tech</a></p>
+							<p><a href="mailto:hello@stakora.tech"><i class="ph-bold ph-envelope" aria-hidden="true"></i> hello@stakora.tech</a></p>
 							<address>
 								Level 15, UB City, Concorde Towers,<br>
 								24 Vittal Mallya Road,<br>
