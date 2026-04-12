@@ -254,6 +254,9 @@
         if (res.ok && json.success) {
           contactForm.setAttribute('hidden', '');
           if (formSuccess) { formSuccess.removeAttribute('hidden'); formSuccess.focus(); }
+          track('generate_lead', {
+            service: (data.service || 'not specified').slice(0, 40),
+          });
         } else {
           throw new Error(json.message || 'Submission failed');
         }
@@ -263,6 +266,53 @@
         if (submitBtn)  submitBtn.disabled = false;
         if (formError)  { formError.removeAttribute('hidden'); formError.focus(); }
       }
+    });
+  }
+
+  /* ── GA4 Event Tracking ────────────────────────────────────*/
+  function track(eventName, params) {
+    if (typeof gtag === 'function') gtag('event', eventName, params || {});
+  }
+
+  // Track CTA button clicks
+  document.querySelectorAll('[data-modal="contact"]').forEach((el) => {
+    el.addEventListener('click', () => track('begin_contact', { method: el.textContent.trim().slice(0, 40) }));
+  });
+
+  // Track "Schedule a Discovery Call" click
+  const calLink = document.querySelector('a[href*="cal.com"]');
+  if (calLink) calLink.addEventListener('click', () => track('schedule_call'));
+
+  // Track "See how we work" click
+  const processLink = document.querySelector('a[href="#process"]');
+  if (processLink) processLink.addEventListener('click', () => track('view_process'));
+
+  /* ── Cookie Consent ────────────────────────────────────────*/
+  const cookieBar     = document.getElementById('cookie-bar');
+  const cookieAccept  = document.getElementById('cookie-accept');
+  const cookieDecline = document.getElementById('cookie-decline');
+
+  function hideCookieBar() {
+    if (cookieBar) cookieBar.setAttribute('hidden', '');
+  }
+
+  if (cookieBar && localStorage.getItem('cookie_consent') === null) {
+    // Show after brief delay so it doesn't fight page load animation
+    setTimeout(() => cookieBar.removeAttribute('hidden'), 1500);
+  }
+
+  if (cookieAccept) {
+    cookieAccept.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent', 'accepted');
+      track('cookie_consent', { action: 'accepted' });
+      hideCookieBar();
+    });
+  }
+
+  if (cookieDecline) {
+    cookieDecline.addEventListener('click', () => {
+      localStorage.setItem('cookie_consent', 'declined');
+      hideCookieBar();
     });
   }
 

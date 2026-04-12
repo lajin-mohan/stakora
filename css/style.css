@@ -1214,6 +1214,57 @@ textarea { resize: vertical; min-height: 100px; line-height: 1.6; }
   margin-bottom: var(--space-6);
 }
 
+/* ============================================================
+   COOKIE CONSENT BAR
+   ============================================================ */
+.cookie-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 999;
+  background: var(--color-charcoal);
+  color: rgba(255,255,255,0.85);
+  padding: var(--space-4) var(--container-pad);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  box-shadow: 0 -2px 16px rgba(0,0,0,0.15);
+  font-size: var(--text-sm);
+  animation: slideUp var(--dur-slow) var(--ease-out);
+}
+
+.cookie-bar[hidden] { display: none; }
+
+.cookie-bar p { max-width: none; margin: 0; color: rgba(255,255,255,0.75); }
+
+.cookie-bar a { color: var(--color-orange); text-decoration: underline; text-underline-offset: 2px; }
+
+.cookie-bar-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-shrink: 0;
+}
+
+.cookie-bar .btn-primary { padding: 8px 20px; font-size: var(--text-sm); }
+
+.cookie-decline {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.5);
+  font-size: var(--text-sm);
+  cursor: pointer;
+  padding: 4px;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+.cookie-decline:hover { color: var(--color-white); }
+
+@keyframes slideUp {
+  from { transform: translateY(100%); opacity: 0; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
 /* Why section icons */
 .why-icon {
   color: var(--color-orange);
