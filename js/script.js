@@ -160,6 +160,7 @@
   const formSuccess  = document.getElementById('form-success');
   const formError    = document.getElementById('form-error');
   const formResetBtn = document.getElementById('form-reset-btn');
+  const formStatus   = document.getElementById('form-status');
 
   function setFieldError(inputEl, msg) {
     clearFieldError(inputEl);
@@ -241,6 +242,7 @@
       if (btnText)    btnText.setAttribute('hidden', '');
       if (btnLoading) { btnLoading.removeAttribute('hidden'); }
       if (submitBtn)  submitBtn.disabled = true;
+      if (formStatus) formStatus.textContent = 'Sending your message, please wait.';
 
       try {
         const data = Object.fromEntries(new FormData(e.target));
@@ -252,6 +254,7 @@
         const json = await res.json();
 
         if (res.ok && json.success) {
+          if (formStatus) formStatus.textContent = '';
           contactForm.setAttribute('hidden', '');
           if (formSuccess) { formSuccess.removeAttribute('hidden'); formSuccess.focus(); }
           track('generate_lead', {
@@ -261,6 +264,7 @@
           throw new Error(json.message || 'Submission failed');
         }
       } catch (_err) {
+        if (formStatus) formStatus.textContent = '';
         if (btnText)    btnText.removeAttribute('hidden');
         if (btnLoading) btnLoading.setAttribute('hidden', '');
         if (submitBtn)  submitBtn.disabled = false;
@@ -298,7 +302,10 @@
 
   if (cookieBar && localStorage.getItem('cookie_consent') === null) {
     // Show after brief delay so it doesn't fight page load animation
-    setTimeout(() => cookieBar.removeAttribute('hidden'), 1500);
+    setTimeout(() => {
+      cookieBar.removeAttribute('hidden');
+      if (cookieAccept) cookieAccept.focus();
+    }, 1500);
   }
 
   if (cookieAccept) {

@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-Content-Type-Options" content="nosniff" />
+	<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+	<title>ColdFusion Modernization Case Studies | Stakora</title>
+	<meta name="description" content="Real ColdFusion modernization case studies — accessibility remediation, SaaS cloud migration, and zero-downtime ERP security hardening with Kubernetes. See the results." />
+	<meta name="keywords" content="ColdFusion modernization case studies, Lucee migration case study, ColdFusion security hardening, legacy system modernization, ColdFusion accessibility WCAG, ColdFusion cloud migration, ColdFusion Kubernetes containerization, ColdFusion consultant results" />
+	<meta name="author" content="Stakora" />
+	<meta name="robots" content="index, follow" />
+	<meta property="og:site_name" content="Stakora" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:title" content="ColdFusion Modernization Case Studies | Stakora" />
+	<meta property="og:description" content="Real ColdFusion modernization case studies — accessibility, SaaS cloud migration, zero-downtime ERP security hardening. Delivered on time, without downtime." />
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://stakora.tech/case-studies.html" />
+	<meta property="og:image" content="https://stakora.tech/images/stakora-coldfusion-modernization.jpg" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:site" content="@stakora" />
+	<meta name="twitter:title" content="ColdFusion Modernization Case Studies | Stakora" />
+	<meta name="twitter:description" content="Real ColdFusion modernization case studies — accessibility, SaaS cloud migration, zero-downtime ERP security hardening with Kubernetes." />
+	<meta name="twitter:image" content="https://stakora.tech/images/stakora-coldfusion-modernization.jpg" />
+	<link rel="canonical" href="https://stakora.tech/case-studies.html" />
+	<link rel="icon" href="images/favicon.ico" sizes="any" />
+	<link rel="icon" href="images/favicon.svg" type="image/svg+xml" />
+	<link rel="apple-touch-icon" href="images/apple-touch-icon.png" />
+	<link rel="manifest" href="site.webmanifest" />
+	<meta name="theme-color" content="#E07A2F" />
+	<link rel="preload" href="fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preload" href="fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin />
+	<link rel="preconnect" href="https://unpkg.com" />
+	<script defer src="https://unpkg.com/phosphor-icons"></script>
+	<link rel="stylesheet" href="css/style.css?v=7" />
+	<script src="js/script.js?v=5" defer></script>
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-4CVD296BKP"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-4CVD296BKP', { anonymize_ip: true });
+	</script>
+	<style>
+		/* ── Case Studies page-specific styles ───────────────────── */
+
+		/* Page hero */
+		.cs-hero {
+			padding-block: clamp(72px, 12vw, 120px) clamp(56px, 8vw, 80px);
+			background: var(--color-surface);
+			border-bottom: 1px solid var(--color-border);
+		}
+		.cs-hero h1 {
+			font-size: clamp(2.25rem, 5vw, 3.5rem);
+			margin-bottom: var(--space-6);
+		}
+		.cs-hero .hero-subheading {
+			font-size: var(--text-body-lg);
+			max-width: 640px;
+			margin-bottom: 0;
+		}
+
+		/* List wrapper */
+		.cs-list {
+			padding-block: clamp(48px, 8vw, 80px) clamp(64px, 10vw, 112px);
+		}
+
+		/* Case study card */
+		.case-study {
+			background: var(--color-white);
+			border: 1px solid var(--color-border);
+			border-radius: 12px;
+			overflow: hidden;
+			box-shadow: var(--shadow-card);
+		}
+		.case-study + .case-study {
+			margin-top: var(--space-12);
+		}
+
+		/* Top accent bar */
+		.cs-accent {
+			height: 4px;
+			background: linear-gradient(90deg, var(--color-orange) 0%, #F5A05A 100%);
+		}
+
+		/* Card header */
+		.cs-header {
+			padding: clamp(24px, 5vw, 40px) clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px);
+			border-bottom: 1px solid var(--color-border);
+		}
+		.cs-meta {
+			display: flex;
+			align-items: center;
+			flex-wrap: wrap;
+			gap: var(--space-2);
+			margin-bottom: var(--space-6);
+		}
+		.cs-badge {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			font-size: 0.6875rem;
+			font-weight: 700;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			padding: 4px 10px;
+			border-radius: 99px;
+			line-height: 1;
+		}
+		.cs-badge--industry {
+			background: var(--color-orange-tint);
+			color: var(--color-orange-dark);
+		}
+		.cs-badge--region {
+			background: var(--color-surface);
+			color: var(--color-dark);
+			border: 1px solid var(--color-border);
+		}
+		.cs-badge--status {
+			background: #ECFDF5;
+			color: #065F46;
+			border: 1px solid #A7F3D0;
+		}
+		.cs-header h2 {
+			font-size: clamp(1.5rem, 3vw, 2.125rem);
+			margin-bottom: var(--space-3);
+			letter-spacing: -0.02em;
+			line-height: 1.2;
+		}
+		.cs-summary {
+			font-size: var(--text-body);
+			color: var(--color-body);
+			line-height: 1.7;
+			max-width: 680px;
+			margin: 0;
+		}
+
+		/* Two-column body */
+		.cs-body {
+			display: grid;
+			grid-template-columns: 1fr 320px;
+		}
+		@media (max-width: 860px) {
+			.cs-body { grid-template-columns: 1fr; }
+		}
+
+		/* Left column */
+		.cs-left {
+			padding: clamp(24px, 5vw, 40px);
+			border-right: 1px solid var(--color-border);
+		}
+		@media (max-width: 860px) {
+			.cs-left { border-right: none; border-bottom: 1px solid var(--color-border); }
+		}
+
+		.cs-col-title {
+			font-size: 0.6875rem;
+			font-weight: 700;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			color: var(--color-muted);
+			display: block;
+			margin-bottom: var(--space-3);
+		}
+
+		.cs-left p {
+			font-size: var(--text-body);
+			color: var(--color-body);
+			line-height: 1.7;
+			max-width: none;
+			margin-bottom: var(--space-6);
+		}
+
+		/* Service tags */
+		.cs-services {
+			display: flex;
+			flex-wrap: wrap;
+			gap: var(--space-2);
+			margin-top: var(--space-2);
+		}
+		.cs-service-tag {
+			display: inline-flex;
+			align-items: center;
+			gap: 5px;
+			font-size: 0.8125rem;
+			font-weight: 500;
+			color: var(--color-charcoal);
+			background: var(--color-surface);
+			border: 1px solid var(--color-border);
+			padding: 5px 12px;
+			border-radius: 99px;
+			transition: border-color var(--dur-fast) var(--ease-out), background var(--dur-fast) var(--ease-out);
+		}
+		.cs-service-tag i {
+			color: var(--color-orange);
+			font-size: 13px;
+		}
+		.cs-service-tag:hover {
+			background: var(--color-orange-tint);
+			border-color: rgba(224,122,47,0.3);
+		}
+
+		/* Insight pull-quote */
+		.cs-insight {
+			margin-top: var(--space-8);
+			padding: var(--space-4) var(--space-6);
+			border-left: 3px solid var(--color-orange);
+			background: var(--color-orange-tint);
+			border-radius: 0 var(--radius-md) var(--radius-md) 0;
+			font-size: var(--text-sm);
+			color: var(--color-dark);
+			font-style: italic;
+			line-height: 1.65;
+		}
+
+		/* Right column — metrics */
+		.cs-right {
+			padding: clamp(24px, 5vw, 40px) clamp(20px, 4vw, 32px);
+			background: var(--color-surface);
+		}
+		.cs-metrics {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: var(--space-3);
+		}
+		@media (max-width: 860px) {
+			.cs-metrics { grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); }
+		}
+		.cs-metric {
+			background: var(--color-white);
+			border: 1px solid var(--color-border);
+			border-radius: var(--radius-lg);
+			padding: var(--space-6) var(--space-4);
+			text-align: center;
+		}
+		.cs-metric-value {
+			display: block;
+			font-size: clamp(1.5rem, 3vw, 2.25rem);
+			font-weight: 700;
+			color: var(--color-orange);
+			line-height: 1.1;
+			letter-spacing: -0.02em;
+			margin-bottom: 6px;
+		}
+		.cs-metric-label {
+			display: block;
+			font-size: 0.6875rem;
+			color: var(--color-body);
+			line-height: 1.45;
+		}
+
+		/* Dark CTA section */
+		.cs-cta {
+			background: var(--color-charcoal);
+			padding-block: clamp(56px, 10vw, 96px);
+		}
+		.cs-cta .section-label { color: rgba(255,255,255,0.45); }
+		.cs-cta h2 { color: var(--color-white); }
+		.cs-cta p  { color: rgba(255,255,255,0.65); }
+		.cs-cta .cta-note {
+			font-size: var(--text-sm);
+			color: rgba(255,255,255,0.35);
+			margin-top: var(--space-6);
+			margin-bottom: 0;
+		}
+		.cs-cta .btn-ghost-inv {
+			display: inline-flex;
+			align-items: center;
+			gap: var(--space-2);
+			padding: 12px 24px;
+			font-size: var(--text-body);
+			font-weight: 600;
+			border-radius: var(--radius-md);
+			color: rgba(255,255,255,0.8);
+			border: 1px solid rgba(255,255,255,0.25);
+			text-decoration: none;
+			transition: background var(--dur-fast) var(--ease-out), border-color var(--dur-fast) var(--ease-out);
+		}
+		.cs-cta .btn-ghost-inv:hover {
+			background: rgba(255,255,255,0.08);
+			border-color: rgba(255,255,255,0.45);
+		}
+
+		/* active nav link */
+		.nav-link[aria-current="page"] {
+			color: var(--color-orange);
+		}
+		.nav-link[aria-current="page"]::after {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<a href="#main" class="skip-link">Skip to content</a>
+
+	<nav id="nav">
+		<div class="nav-container">
+			<a href="index.html" class="logo">
+				<picture>
+					<source srcset="images/stakora-logo.webp" type="image/webp" />
+					<img
+						src="images/stakora-logo.png"
+						alt="Stakora — ColdFusion Modernization &amp; Legacy System Specialists"
+						width="192"
+						height="40"
+					/>
+				</picture>
+			</a>
+			<div class="nav-links">
+				<a href="index.html#services" class="nav-link">Services</a>
+				<a href="index.html#process" class="nav-link">How We Work</a>
+				<a href="case-studies.html" class="nav-link" aria-current="page">Case Studies</a>
+				<a href="index.html#audience" class="nav-link">Who We Work With</a>
+				<a href="#" class="btn btn-primary" data-modal="contact">Request a Review</a>
+			</div>
+			<button class="nav-toggle" aria-label="Open navigation menu" aria-expanded="false" aria-controls="nav-mobile">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
+		<div class="nav-mobile" id="nav-mobile" hidden>
+			<a href="index.html#services" class="nav-mobile-link">Services</a>
+			<a href="index.html#process" class="nav-mobile-link">How We Work</a>
+			<a href="case-studies.html" class="nav-mobile-link" aria-current="page">Case Studies</a>
+			<a href="index.html#audience" class="nav-mobile-link">Who We Work With</a>
+			<a href="#" class="btn btn-primary nav-mobile-cta" data-modal="contact">Request a Review</a>
+		</div>
+	</nav>
+
+	<main id="main">
+
+		<!-- Page Hero -->
+		<section class="cs-hero">
+			<div class="container reveal" style="--i:0">
+				<span class="section-label">CLIENT WORK</span>
+				<h1>ColdFusion Modernization Case Studies</h1>
+				<p class="hero-subheading">
+					Three real engagements. Three production systems that had to stay live
+					throughout. Here's what we found, what we delivered, and what changed.
+				</p>
+			</div>
+		</section>
+
+		<!-- Case Studies -->
+		<section class="cs-list">
+			<div class="container">
+
+				<!-- ── Case Study 1: eLearning ──────────────────────────── -->
+				<article class="case-study reveal" style="--i:1" id="elearning">
+					<div class="cs-accent"></div>
+					<div class="cs-header">
+						<div class="cs-meta">
+							<span class="cs-badge cs-badge--industry">
+								<i class="ph-bold ph-graduation-cap" aria-hidden="true"></i>
+								eLearning
+							</span>
+							<span class="cs-badge cs-badge--region">
+								<i class="ph-bold ph-map-pin" aria-hidden="true"></i>
+								United Kingdom
+							</span>
+							<span class="cs-badge cs-badge--status">
+								<i class="ph-bold ph-check-circle" aria-hidden="true"></i>
+								Delivered
+							</span>
+						</div>
+						<h2>Accessibility Compliance, Modern UI, and Full Infrastructure Migration — in Two Weeks</h2>
+						<p class="cs-summary">
+							A UK eLearning provider faced a regulatory WCAG 2.1 AA deadline with no budget for a redesign.
+							We delivered accessibility compliance, a fully modernised interface, and a complete Lucee &amp; Linux
+							migration — simultaneously, in two weeks, at a fraction of traditional cost.
+						</p>
+					</div>
+					<div class="cs-body">
+						<div class="cs-left">
+							<span class="cs-col-title">The Challenge</span>
+							<p>
+								The client ran a course delivery platform on Adobe ColdFusion 2018 on Windows Server — a
+								system built over nearly a decade with no formal accessibility review. A regulatory deadline
+								required WCAG 2.1 AA compliance, and the existing interfaces failed on contrast ratios,
+								keyboard navigation, and screen reader compatibility throughout.
+							</p>
+							<p>
+								There was zero budget for a dedicated UX redesign. At the same time, infrastructure costs had
+								grown disproportionately — Adobe licensing and Windows hosting were consuming budget that
+								offered no return. The business needed cost relief, not just compliance.
+							</p>
+							<p>
+								We identified the opportunity to address both simultaneously. By leveraging AI-assisted UI
+								generation and pairing it with the Lucee &amp; Linux migration already in scope, we delivered a
+								modern, accessible interface without a separate design engagement — and eliminated the
+								licensing overhead in the same project.
+							</p>
+
+							<span class="cs-col-title">What We Delivered</span>
+							<div class="cs-services">
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-eye" aria-hidden="true"></i>
+									WCAG 2.1 AA Audit &amp; Remediation
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-monitor" aria-hidden="true"></i>
+									UI Modernization
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-robot" aria-hidden="true"></i>
+									AI-Assisted Redesign
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+									Lucee &amp; Linux Migration
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-gauge" aria-hidden="true"></i>
+									Performance Optimization
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-currency-dollar" aria-hidden="true"></i>
+									Cost Optimization
+								</span>
+							</div>
+
+							<div class="cs-insight">
+								"We used AI tooling to modernise the UI at a fraction of the traditional cost — delivering
+								a fully accessible, responsive interface without the agency price tag. The client didn't
+								need to choose between compliance and cost reduction. We delivered both."
+							</div>
+						</div>
+						<div class="cs-right">
+							<span class="cs-col-title">Key Outcomes</span>
+							<div class="cs-metrics">
+								<div class="cs-metric">
+									<span class="cs-metric-value">60%</span>
+									<span class="cs-metric-label">reduction in monthly infrastructure &amp; licensing costs</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">2 wks</span>
+									<span class="cs-metric-label">from kick-off to live deployment</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">6 mo</span>
+									<span class="cs-metric-label">to full ROI on total upgrade investment</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">AA</span>
+									<span class="cs-metric-label">WCAG 2.1 compliance achieved at launch</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- ── Case Study 2: Social Impact SaaS ────────────────── -->
+				<article class="case-study reveal" style="--i:2" id="social-impact">
+					<div class="cs-accent"></div>
+					<div class="cs-header">
+						<div class="cs-meta">
+							<span class="cs-badge cs-badge--industry">
+								<i class="ph-bold ph-heartbeat" aria-hidden="true"></i>
+								Social Impact
+							</span>
+							<span class="cs-badge cs-badge--region">
+								<i class="ph-bold ph-map-pin" aria-hidden="true"></i>
+								United States
+							</span>
+							<span class="cs-badge cs-badge--status">
+								<i class="ph-bold ph-check-circle" aria-hidden="true"></i>
+								Delivered
+							</span>
+						</div>
+						<h2>From Internal ColdFusion Platform to Multi-Tenant SaaS — Without Disrupting a Single Active Client</h2>
+						<p class="cs-summary">
+							A European social impact organisation needed to evolve their grant management platform into a
+							scalable SaaS product. We assessed, migrated, re-architected, and deployed to cloud — reducing
+							infrastructure cost despite tripling capacity, with zero disruption to live clients throughout.
+						</p>
+					</div>
+					<div class="cs-body">
+						<div class="cs-left">
+							<span class="cs-col-title">The Challenge</span>
+							<p>
+								The platform managed grant applications, impact reporting, and compliance workflows for a
+								growing roster of NGO and public sector clients. Built on ColdFusion and hosted on a single
+								fixed server, it was approaching its limits — response times were degrading under load, and
+								onboarding each new client required manual server provisioning with no elasticity.
+							</p>
+							<p>
+								The business goal was clear: become a multi-tenant SaaS provider. The engineering constraint
+								was equally clear: the system had to stay live throughout every phase. Active reporting cycles
+								and grant deadlines meant there was no viable window for downtime.
+							</p>
+							<p>
+								We started with a full system assessment and SaaS readiness analysis, delivered as a
+								structured report with implementation estimate. This gave the client confidence in both the
+								technical path and the commercial case before a single line of code changed. The migration
+								to AWS, with Lucee replacing Adobe ColdFusion, was executed in phases — each validated
+								before the next began.
+							</p>
+
+							<span class="cs-col-title">What We Delivered</span>
+							<div class="cs-services">
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-clipboard-text" aria-hidden="true"></i>
+									System Assessment &amp; SaaS Readiness Report
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+									Lucee Migration
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-cloud" aria-hidden="true"></i>
+									Cloud Migration (AWS)
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-users-three" aria-hidden="true"></i>
+									Multi-Tenant Architecture
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-gauge" aria-hidden="true"></i>
+									Performance &amp; Scaling
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-lock-key" aria-hidden="true"></i>
+									Security Hardening
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-currency-dollar" aria-hidden="true"></i>
+									Cost Optimization
+								</span>
+							</div>
+
+							<div class="cs-insight">
+								"On-demand auto-scaling meant the infrastructure bill actually fell — even as the platform's
+								capacity tripled. The client moved from a fixed cost they couldn't justify to a variable cost
+								that scaled with revenue."
+							</div>
+						</div>
+						<div class="cs-right">
+							<span class="cs-col-title">Key Outcomes</span>
+							<div class="cs-metrics">
+								<div class="cs-metric">
+									<span class="cs-metric-value">35%</span>
+									<span class="cs-metric-label">infrastructure cost reduction despite 3× capacity increase</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">10×</span>
+									<span class="cs-metric-label">peak traffic capacity via on-demand auto-scaling</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">0</span>
+									<span class="cs-metric-label">client disruptions across the full migration</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">SaaS</span>
+									<span class="cs-metric-label">multi-tenant product launched on schedule</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+				<!-- ── Case Study 3: Manufacturing ERP ─────────────────── -->
+				<article class="case-study reveal" style="--i:3" id="manufacturing-erp">
+					<div class="cs-accent"></div>
+					<div class="cs-header">
+						<div class="cs-meta">
+							<span class="cs-badge cs-badge--industry">
+								<i class="ph-bold ph-factory" aria-hidden="true"></i>
+								Manufacturing
+							</span>
+							<span class="cs-badge cs-badge--region">
+								<i class="ph-bold ph-map-pin" aria-hidden="true"></i>
+								Europe
+							</span>
+							<span class="cs-badge cs-badge--status">
+								<i class="ph-bold ph-check-circle" aria-hidden="true"></i>
+								Delivered
+							</span>
+						</div>
+						<h2>ERP Security Hardening, Lucee Migration, and Full Containerization — Zero Downtime, Zero Surprises</h2>
+						<p class="cs-summary">
+							A European manufacturer's ERP — running production scheduling, inventory, and supplier workflows
+							24/7 — was flagged as high-risk by an external security audit. We hardened, migrated, and
+							containerized it without a single minute of production downtime, and caught vulnerabilities the
+							external audit missed.
+						</p>
+					</div>
+					<div class="cs-body">
+						<div class="cs-left">
+							<span class="cs-col-title">The Challenge</span>
+							<p>
+								The ERP system was running on an outdated version of Adobe ColdFusion on Windows Server —
+								years behind on security patches and carrying a backlog of known CVEs. A third-party security
+								audit had flagged the platform as high-risk and recommended immediate remediation. The
+								business had no tolerance for downtime: production scheduling ran continuously and any
+								interruption carried direct financial and operational consequences.
+							</p>
+							<p>
+								During our initial code review — before any production changes — we identified scope leak
+								vulnerabilities in the legacy CFML codebase that the external audit had not found. Improperly
+								scoped variables were exposing sensitive production and supplier data across request contexts.
+								These were caught in development and patched before they could become an incident.
+							</p>
+							<p>
+								Beyond security, we identified the opportunity to modernize the deployment architecture.
+								Containerizing the application with Docker and orchestrating it with Kubernetes gave the
+								client a platform they could scale, redeploy, and roll back — capabilities the legacy
+								Windows setup simply couldn't offer.
+							</p>
+
+							<span class="cs-col-title">What We Delivered</span>
+							<div class="cs-services">
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-shield-check" aria-hidden="true"></i>
+									Security Hardening
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-bug" aria-hidden="true"></i>
+									Scope Leak Identification &amp; Remediation
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-anchor" aria-hidden="true"></i>
+									Legacy System Stabilization
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-arrow-right" aria-hidden="true"></i>
+									Lucee &amp; Linux Migration
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-cube" aria-hidden="true"></i>
+									Docker Containerization
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-circles-three" aria-hidden="true"></i>
+									Kubernetes Orchestration
+								</span>
+								<span class="cs-service-tag">
+									<i class="ph-bold ph-gauge" aria-hidden="true"></i>
+									Performance &amp; Scaling
+								</span>
+							</div>
+
+							<div class="cs-insight">
+								"The scope leaks we found in the code review weren't in the third-party audit report.
+								Catching them before production — rather than after an incident — was the most valuable
+								outcome of the engagement. The client never knew they existed until we showed them."
+							</div>
+						</div>
+						<div class="cs-right">
+							<span class="cs-col-title">Key Outcomes</span>
+							<div class="cs-metrics">
+								<div class="cs-metric">
+									<span class="cs-metric-value">0</span>
+									<span class="cs-metric-label">minutes of production downtime during migration</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">7</span>
+									<span class="cs-metric-label">critical CVEs remediated across CF &amp; OS layer</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">4</span>
+									<span class="cs-metric-label">scope leak vectors patched before production</span>
+								</div>
+								<div class="cs-metric">
+									<span class="cs-metric-value">K8s</span>
+									<span class="cs-metric-label">containerized &amp; orchestrated, ready to auto-scale</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="cs-cta">
+			<div class="container">
+				<div class="cta-content reveal" style="--i:0">
+					<span class="section-label">START A CONVERSATION</span>
+					<h2>Your system has a story. Let's write the next chapter.</h2>
+					<p>
+						Whether you're facing a compliance deadline, a security risk, or the need to scale —
+						we'll start with an honest assessment of what's actually going on and what it will take to fix it.
+					</p>
+					<div class="hero-ctas">
+						<a href="https://cal.com/stakora" class="btn btn-white" target="_blank" rel="noopener noreferrer">
+							<i class="ph-bold ph-calendar" aria-hidden="true"></i>
+							Schedule a Free Discovery Call
+						</a>
+						<a href="#" class="btn-ghost-inv" data-modal="contact">
+							<i class="ph-bold ph-envelope" aria-hidden="true"></i>
+							Request a System Review
+						</a>
+					</div>
+					<p class="cta-note">Fixed-scope engagements. No hourly billing. No scope creep. Clear outcomes at every stage.</p>
+				</div>
+			</div>
+		</section>
+
+	</main>
+
+	<footer id="footer">
+		<div class="container">
+			<div class="footer-content">
+				<div>
+					<h3>STAKORA</h3>
+					<p>Legacy code. Modern confidence.</p>
+					<p><a href="mailto:hello@stakora.tech"><i class="ph-bold ph-envelope" aria-hidden="true"></i> hello@stakora.tech</a></p>
+					<address>
+						Level 15, UB City, Concorde Towers,<br>
+						24 Vittal Mallya Road,<br>
+						Bangalore – 560001, India
+					</address>
+				</div>
+				<nav class="footer-nav" aria-label="Footer navigation">
+					<a href="index.html#services" class="nav-link">Services</a>
+					<a href="index.html#process" class="nav-link">How We Work</a>
+					<a href="case-studies.html" class="nav-link">Case Studies</a>
+					<a href="index.html#audience" class="nav-link">Who We Work With</a>
+				</nav>
+			</div>
+			<div class="footer-legal">
+				© 2026 Stakora. All rights reserved. · <a href="privacy.html">Privacy Policy</a>
+			</div>
+		</div>
+	</footer>
+
+	<!-- Cookie consent -->
+	<div id="cookie-bar" class="cookie-bar" role="dialog" aria-modal="false" aria-labelledby="cookie-bar-title" hidden>
+		<p id="cookie-bar-title">We use Google Analytics cookies to understand how visitors use our site. See our <a href="privacy.html">Privacy Policy</a>.</p>
+		<div class="cookie-bar-actions">
+			<button id="cookie-accept" class="btn btn-primary">Accept cookies</button>
+			<button id="cookie-decline" class="cookie-decline">Decline</button>
+		</div>
+	</div>
+
+	<!-- Contact Modal -->
+	<div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+		<div class="modal-overlay"></div>
+		<div class="modal-box">
+			<button class="modal-close" aria-label="Close modal">&times;</button>
+			<div class="modal-header">
+				<span class="section-label">GET IN TOUCH</span>
+				<h3 id="modal-title">Request a Free System Review</h3>
+				<p>Tell us about your ColdFusion system and we'll be in touch within one business day.</p>
+			</div>
+			<form id="contact-form" novalidate>
+				<input type="hidden" name="access_key" value="1b246da5-e2e5-4b12-af64-205a2f07e841" />
+				<input type="hidden" name="subject" value="New enquiry — Stakora.tech" />
+				<input type="hidden" name="from_name" value="Stakora Website" />
+				<input type="hidden" name="redirect" value="false" />
+				<input type="checkbox" name="botcheck" tabindex="-1" aria-hidden="true" style="display:none" />
+
+				<div class="form-row">
+					<div class="form-group">
+						<label for="f-name">Full name <span class="required" aria-hidden="true">*</span></label>
+						<input type="text" id="f-name" name="name" required autocomplete="name" placeholder="Jane Smith" />
+					</div>
+					<div class="form-group">
+						<label for="f-company">Company</label>
+						<input type="text" id="f-company" name="company" autocomplete="organization" placeholder="Acme Corp" />
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="f-email">Email address <span class="required" aria-hidden="true">*</span></label>
+					<input type="email" id="f-email" name="email" required autocomplete="email" placeholder="jane@company.com" />
+				</div>
+				<div class="form-group">
+					<label for="f-service">Service of interest</label>
+					<select id="f-service" name="service">
+						<option value="">Select a service…</option>
+						<option value="ColdFusion Modernization">ColdFusion Modernization</option>
+						<option value="Legacy System Stabilization">Legacy System Stabilization</option>
+						<option value="Lucee &amp; Linux Migration">Lucee &amp; Linux Migration</option>
+						<option value="Security Hardening">Security Hardening</option>
+						<option value="GDPR &amp; Compliance Alignment">GDPR &amp; Compliance Alignment</option>
+						<option value="Performance &amp; Scaling">Performance &amp; Scaling</option>
+						<option value="Cost Optimization">Cost Optimization</option>
+						<option value="New Product Development (PHP/Go/CF/Lucee)">New Product Development (PHP/Go/CF/Lucee)</option>
+						<option value="Legacy System Maintenance">Legacy System Maintenance</option>
+						<option value="Not sure yet">Not sure yet</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<label for="f-message">Brief description of your system or challenge</label>
+					<textarea id="f-message" name="message" rows="4" placeholder="e.g. We're running Adobe ColdFusion 2018 on Windows Server, handling ~50k requests/day..."></textarea>
+				</div>
+				<div class="form-group form-consent">
+					<label class="checkbox-label">
+						<input type="checkbox" name="gdpr_consent" required />
+						<span>I agree to Stakora processing my data to respond to this enquiry. See our <a href="privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span>
+					</label>
+				</div>
+				<span class="sr-only" aria-live="polite" id="form-status"></span>
+				<button type="submit" class="btn btn-primary form-submit">
+					<span class="btn-text">Send Message</span>
+					<span class="btn-loading" hidden>Sending…</span>
+				</button>
+			</form>
+			<div id="form-success" class="form-feedback form-feedback--success" hidden role="alert">
+				<p>✓ Message received. We'll be in touch within one business day.</p>
+				<button class="btn btn-ghost" id="form-reset-btn">Send another message</button>
+			</div>
+			<div id="form-error" class="form-feedback form-feedback--error" hidden role="alert">
+				<p>Something went wrong — please try again or email us directly at <a href="mailto:hello@stakora.tech">hello@stakora.tech</a>.</p>
+			</div>
+		</div>
+	</div>
+
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "Home",
+				"item": "https://stakora.tech"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Case Studies",
+				"item": "https://stakora.tech/case-studies.html"
+			}
+		]
+	}
+	</script>
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "ItemList",
+		"name": "Stakora ColdFusion Modernization Case Studies",
+		"description": "Real ColdFusion modernization engagements delivered by Stakora — accessibility remediation, SaaS cloud migration, and zero-downtime ERP security hardening.",
+		"url": "https://stakora.tech/case-studies.html",
+		"itemListElement": [
+			{
+				"@type": "ListItem",
+				"position": 1,
+				"name": "eLearning Platform — Accessibility, UI Modernization &amp; Lucee Migration",
+				"url": "https://stakora.tech/case-studies.html#elearning"
+			},
+			{
+				"@type": "ListItem",
+				"position": 2,
+				"name": "Social Impact Platform — SaaS Cloud Migration &amp; Multi-Tenant Architecture",
+				"url": "https://stakora.tech/case-studies.html#social-impact"
+			},
+			{
+				"@type": "ListItem",
+				"position": 3,
+				"name": "Manufacturing ERP — Security Hardening, Lucee Migration &amp; Kubernetes Containerization",
+				"url": "https://stakora.tech/case-studies.html#manufacturing-erp"
+			}
+		]
+	}
+	</script>
+
+</body>
+</html>

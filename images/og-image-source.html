@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+    background: #1E2022;
+  }
+
+  .wrap {
+    width: 1200px;
+    height: 630px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 72px 96px;
+    background: #1E2022;
+    overflow: hidden;
+  }
+
+  /* Grid dot texture */
+  .wrap::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  /* Orange glow */
+  .wrap::after {
+    content: '';
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 480px;
+    height: 480px;
+    background: radial-gradient(circle, rgba(224,122,47,0.25) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Orange top bar */
+  .bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, #E07A2F, #C4651A);
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+  }
+
+  .logo {
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #E07A2F;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-dot {
+    width: 6px;
+    height: 6px;
+    background: #E07A2F;
+    border-radius: 50%;
+  }
+
+  h1 {
+    font-size: 52px;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.1;
+    letter-spacing: -0.025em;
+    margin-bottom: 24px;
+  }
+
+  h1 em {
+    font-style: normal;
+    color: #E07A2F;
+  }
+
+  p {
+    font-size: 20px;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.55;
+    font-weight: 400;
+    max-width: 580px;
+  }
+
+  .tags {
+    position: absolute;
+    bottom: 72px;
+    left: 96px;
+    right: 96px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 2;
+  }
+
+  .tag {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    padding: 6px 14px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 4px;
+  }
+
+  .domain {
+    margin-left: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 0.02em;
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="bar"></div>
+
+  <div class="content">
+    <div class="logo">
+      <div class="logo-dot"></div>
+      STAKORA
+    </div>
+    <h1>ColdFusion modernization.<br>Done <em>precisely.</em></h1>
+    <p>We help teams modernize, secure, and scale legacy ColdFusion systems — incrementally, safely, without costly rewrites.</p>
+  </div>
+
+  <div class="tags">
+    <span class="tag">ColdFusion</span>
+    <span class="tag">Lucee Migration</span>
+    <span class="tag">Security</span>
+    <span class="tag">GDPR</span>
+    <span class="domain">stakora.tech</span>
+  </div>
+</div>
+</body>
+</html>
